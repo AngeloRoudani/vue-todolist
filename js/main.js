@@ -25,14 +25,14 @@ const { createApp } = Vue;
                 getDone () {
                     if(this.taskArray.done == false) {
                         this.taskArray.done = true;
-                        this.taskArray.text.style.textDecoration = "line-through";
-                    } else {
+                        this.taskArray.text.style.textDecoration = 'line-through';
+                    } else if (this.taskArray.done == true) {
                         this.taskArray.done = false
                     }
                 },
                 taskPush () {
-                    this.taskArray.push('this.newTask.text');
-                    this.newTask.text = "";
+                    this.taskArray.push(this.newTask);
+                    this.newTask = "";
                 }
 
             }
