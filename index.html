@@ -22,7 +22,7 @@
 
             <div class="container">
                 <input class="input_style border_style" type="text"
-                 placeholder="Inserisci qui cosa devi fare" v-model="newTask.text"
+                 placeholder="Inserisci qui cosa devi fare" v-model="newTask"
                  @keyup.enter="taskPush">
                 <button class="border_style cursor" @click="taskPush">Aggiungi</button>
             </div>
@@ -31,7 +31,7 @@
                 <ul v-if="taskArray.length > 0">
                     <li v-for="(task,index) in taskArray"  class="task">
                         <span class="task_content cursor" @click="getDone"
-                        :class="(taskArray.done == true)?erased:''">{{task.text}}
+                        :class="(taskArray.done == true)?erased:''">{{task}}
                         </span>
                         <i class="fa-solid fa-square-xmark cursor" @click="deleteTask(index)"></i>
                     </li>

@@ -4,12 +4,10 @@ const { createApp } = Vue;
             data() {
                 return {
                     erased: 'wellDone',
-                    newTask:{
-                        text:"",
-                        done: false
-                        },
+                    newTask:"",
                     
-                    taskArray: []    
+                    taskArray: [
+                    ]    
                 }
             },
             methods: {
