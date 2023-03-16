@@ -57,3 +57,7 @@ header img {
     cursor: pointer;
 }
 
+.wellDone {
+    text-decoration: line-through;
+}
+

@@ -30,8 +30,10 @@
             <div class="container task_list">
                 <ul v-if="taskArray.length > 0">
                     <li v-for="(task,index) in taskArray"  class="task">
-                        <span class="task_content" @click="getDone">{{task.text}}</span>
-                        <i class="fa-solid fa-square-xmark cursor" @click="deleteTask(index)" ></i>
+                        <span class="task_content cursor" @click="getDone"
+                        :class="(taskArray.done == true)?erased:''">{{task.text}}
+                        </span>
+                        <i class="fa-solid fa-square-xmark cursor" @click="deleteTask(index)"></i>
                     </li>
                 </ul>
                 <h4 v-else>Non hai impegni</h4>

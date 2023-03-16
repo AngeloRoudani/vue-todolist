@@ -3,19 +3,13 @@ const { createApp } = Vue;
     createApp({
             data() {
                 return {
-                    newTask:[
-                        {
-                            text:"",
-                            done: false
-                        }
-                    ],
-                    taskArray: [
-                        {
-                            text:"Comprare Pane",
-                            done: false,
-                        }
-                        
-                    ]
+                    erased: 'wellDone',
+                    newTask:{
+                        text:"",
+                        done: false
+                        },
+                    
+                    taskArray: []    
                 }
             },
             methods: {
@@ -23,15 +17,12 @@ const { createApp } = Vue;
                     this.taskArray = this.taskArray.splice(index,1)
                 },
                 getDone () {
-                    if(this.taskArray.done == false) {
-                        this.taskArray.done = true;
-                        this.taskArray.text.style.textDecoration = 'line-through';
-                    } else if (this.taskArray.done == true) {
-                        this.taskArray.done = false
-                    }
+                    
+                    this.taskArray.done = true;
+                        
                 },
                 taskPush () {
-                    this.taskArray.push(this.newTask);
+                    this.taskArray.unshift(this.newTask);
                     this.newTask = "";
                 }
 
