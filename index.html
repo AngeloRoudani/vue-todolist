@@ -21,13 +21,15 @@
         <main>
 
             <div class="container">
-                <input class="input_style border_style" type="text" placeholder="Inserisci qui cosa devi fare">
-                <button class="border_style cursor">Aggiungi</button>
+                <input class="input_style border_style" type="text"
+                 placeholder="Inserisci qui cosa devi fare" v-model="newTask.text"
+                 @keyup.enter="taskPush">
+                <button class="border_style cursor" @click="taskPush">Aggiungi</button>
             </div>
 
             <div class="container task_list">
                 <ul v-if="taskArray.length > 0">
-                    <li v-for="(task,index in taskArray)"  class="task">
+                    <li v-for="(task,index) in taskArray"  class="task">
                         <span class="task_content" @click="getDone">{{task.text}}</span>
                         <i class="fa-solid fa-square-xmark cursor" @click="deleteTask(index)" ></i>
                     </li>
@@ -40,7 +42,7 @@
 
     </div>
 
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script type="text" src="./js/main.js"></script>
+    <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
+    <script src="./js/main.js"></script>
 </body>
 </html>

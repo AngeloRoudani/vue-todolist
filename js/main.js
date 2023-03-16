@@ -3,24 +3,18 @@ const { createApp } = Vue;
     createApp({
             data() {
                 return {
-
+                    newTask:[
+                        {
+                            text:"",
+                            done: false
+                        }
+                    ],
                     taskArray: [
                         {
                             text:"Comprare Pane",
                             done: false,
-                        },
-                        {
-                            text:"Andare in posta",
-                            done: true,
-                        },
-                        {
-                            text:"Andare in banca",
-                            done: true,
-                        },
-                        {
-                            text:"Comprare computer nuovo",
-                            done: false,
                         }
+                        
                     ]
                 }
             },
@@ -36,6 +30,10 @@ const { createApp } = Vue;
                         this.taskArray.done = false
                     }
                 },
+                taskPush () {
+                    this.taskArray.push('this.newTask.text');
+                    this.newTask.text = "";
+                }
 
             }
       
