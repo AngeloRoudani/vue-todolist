@@ -22,29 +22,17 @@
 
             <div class="container">
                 <input class="input_style border_style" type="text" placeholder="Inserisci qui cosa devi fare">
-                <button class="border_style">Aggiungi</button>
+                <button class="border_style cursor">Aggiungi</button>
             </div>
 
             <div class="container task_list">
-                <ul>
-                    <li class="task">
-                        <span class="task_content">Content</span>
-                        <i class="fa-solid fa-square-xmark"></i>
+                <ul v-if="taskArray.length > 0">
+                    <li v-for="(task,index in taskArray)"  class="task">
+                        <span class="task_content" @click="getDone">{{task.text}}</span>
+                        <i class="fa-solid fa-square-xmark cursor" @click="deleteTask(index)" ></i>
                     </li>
-                    <li class="task">
-                        <span class="task_content">Content</span>
-                        <i class="fa-solid fa-square-xmark"></i>
-                    </li>
-                    <li class="task">
-                        <span class="task_content">Content</span>
-                        <i class="fa-solid fa-square-xmark"></i>
-                    </li>
-                    <li class="task">
-                        <span class="task_content">Content</span>
-                        <i class="fa-solid fa-square-xmark"></i>
-                    </li>
-                    
                 </ul>
+                <h4 v-else>Non hai impegni</h4>
             </div>
             
         </main>
@@ -53,6 +41,6 @@
     </div>
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script type="text" src="js/main.js"></script>
+    <script type="text" src="./js/main.js"></script>
 </body>
 </html>
