@@ -25,6 +25,7 @@
                  placeholder="Inserisci qui cosa devi fare" v-model="newTask"
                  @keyup.enter="taskPush">
                 <button class="border_style cursor" @click="taskPush">Aggiungi</button>
+                <div v-show="allert" class="allert_color">Inserire almeno 10 caratteri</div>
             </div>
 
             <div class="container task_list">

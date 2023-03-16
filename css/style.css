@@ -27,6 +27,7 @@ header img {
 
 .input_style {
     min-width: 300px;
+    margin-right: 10px;
 }
 
 .border_style {
@@ -59,5 +60,10 @@ header img {
 
 .wellDone {
     text-decoration: line-through;
+}
+
+.allert_color {
+    margin-top: 5px;
+    color: darkred;
 }
 

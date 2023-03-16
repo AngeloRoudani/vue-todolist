@@ -1,30 +1,38 @@
 const { createApp } = Vue;
 
     createApp({
-            data() {
-                return {
-                    erased: 'wellDone',
-                    newTask:"",
-                    
-                    taskArray: [
-                    ]    
-                }
+        data() {
+            return {
+                erased: 'wellDone',
+                allert: false,
+                newTask:"",
+                
+                taskArray: [
+                ]    
+            }
+        },
+        methods: {
+            deleteTask (index) {
+                this.taskArray.splice(index,1)
             },
-            methods: {
-                deleteTask (index) {
-                    this.taskArray.splice(index,1)
-                },
-                getDone () {
+            getDone () {
+                
+                this.taskArray.done = true;
                     
-                    this.taskArray.done = true;
-                        
-                },
-                taskPush () {
+            },
+            taskPush () {
+                if (this.newTask.length >= 10) {
                     this.taskArray.unshift(this.newTask);
                     this.newTask = "";
+                    this.allert = false;
+                    
+                } else {
+                    this.allert = true;
                 }
-
+                
             }
+
+        }
       
         
     }).mount('#app')
