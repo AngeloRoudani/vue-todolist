@@ -12,7 +12,7 @@ const { createApp } = Vue;
             },
             methods: {
                 deleteTask (index) {
-                    this.taskArray = this.taskArray.splice(index,1)
+                    this.taskArray.splice(index,1)
                 },
                 getDone () {
                     
